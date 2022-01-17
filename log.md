@@ -1,4 +1,225 @@
 # 100 Days Of Code - Log
+
+### Day 17: January 17, 2022
+
+**Today's Progress**: I watched the video "#12 - Dart Functions - Anonymous Functions, Positional & Named Parameters, Lambdas, Closures, Scope" and "#13 - Dart Operators - Everything you need to know + Comparing 2 Objects in Dart" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. Function are objects in Dart
+
+2. How to assign a function to a variable: 
+```
+void main() {
+  int f = first(1); // Asigns the return value from the funtion to the varialbe -  `f1` because the fuction first gets called 
+  
+  var f2 = first; // Asign the function to the variable f2. f2 now holds a reference to the function names first
+}
+
+int first(int a) {
+  return a;
+}
+	
+```
+3. Passing functions as function arguments: 
+```
+void main() {  
+  var functionObject = first;
+
+  second(functionObject, 5);
+}
+
+void second(int Function(int) f, int a) {
+  print(f(4));
+  print(f(a));
+}
+
+int first(int a) {
+  return a;
+}
+```
+4. Arrow shorthand syntax
+Can be used when you are returning a single expression
+```
+// Normal function declaration
+int first(int a) {
+  return a;
+}
+
+// Arrow shorthand syntax
+int first1(int a) => a;
+int first2(int a) => a.isOdd ? 1 : 0;
+
+```
+5. Anonymous functions (lambdas, closures)
+
+```
+void main() {  
+  var list = ["hello", "there"].map(applyUppercaseCaseeChanges).toList();  // Using a named function.
+  
+  var list2 = ["hello", "there"].map((String s) {
+    return s.toUpperCase();
+  }).toList(); // Using a anonymous function
+  
+  var list3 = ["hello", "there"].map((String s) => s.toUpperCase()).toList(); // Using an anonylous function in compination with an arrow fuction because we only return a single expression.
+ 
+}
+
+String applyUppercaseCaseeChanges(String s) {
+  return s.toUpperCase();
+}
+```
+####Parameters:
+1. Required Positional Parameters: 
+
+The order in which the parameters are called matters, and all parameters are required.
+```
+void main() {  
+  requiredPositional(1, 2);
+}
+
+void requiredPositional(int a, int b) => print("$a $b");
+````
+
+2. Optional Positional Parameters
+
+The order of the parameters cant be changed, but the parameters are not required.
+```
+void main() {  
+  optionalPositional(1);
+}
+
+void optionalPositional([int a = 5, int b = 5]) => print("$a $b");
+```
+3. Required Named Parameters
+
+With name parameters, it's possible to see what parameter you set to what value, and the order of the parameters does not matter anymore.
+```
+void main() {  
+  requiredNamed(a: 10, b: 20);
+}
+
+void requiredNamed({required int a,  required int b}) => print("$a $b");
+```
+4. Optional Named Parameters:
+
+Has the advantages of Required Named Parameters, only that the parameters are not required anymore but optional. Optional named parameters need to have a default value. 
+```
+void main() {  
+  optionalNamed(a: 10, b: 20);
+}
+
+void optionalNamed({int a = 0, int b = 0}) => print("$a $b");
+````
+
+5. It's also possible to mix required and optional named parameters: 
+```
+void main() {  
+  optionalAndRequiredNamed(a: 10, b: 20);
+}
+
+void optionalAndRequiredNamed({required int a, int b = 0}) => print("$a $b");
+```
+
+6. You can mix Required Positional Parameters with optional positional parameters or required/optional named Parameters, but you cant mix all three of them.
+```
+void main() {  
+  mixOfParams(10, c: 10, b: 20);
+  mixOfParams2(10, 10);
+}
+
+void mixOfParams(int a, {required int c, int b = 0}) => print("$a $b $c");
+void mixOfParams2(int a, [int c = 0, int b = 0]) => print("$a $b $c");
+```
+####Callable classes
+```
+void main() {  
+  A()(); // first set of () makes an instance of the class, and the second pair of () calls the function
+}
+
+class A {
+  void call() => print("I'm a function.");
+}
+```
+
+####Expressions
+
+1. difference between a++ and ++a
+```
+void main() {  
+  var a = 5;
+  
+  // a1 = a, then a = a + 1
+  // Dart first assign a to a1 and afterwords add 1 to a
+  var a1 = a++;
+  print(a1); // 5
+  print(a); // 6
+  
+  // a1 = a + 1, then a2 = a
+  // Dart first adds 1 to a, and then assigns a to a2
+  var a2 = ++a;
+  print(a2); // 7
+}
+```
+2.  In Dart objects are only equal if they point to the same object in memory.
+```
+void main() {  
+  int a = 2;
+  int b = 2;
+  print(a == b); // true
+  
+  var list1 = [1, 2, 3];
+  var list2 = [1, 2, 3];
+  print(list1 == list2); // false
+    
+  var list3 = const [1, 2, 3];
+  var list4 = const [1, 2, 3];
+  print(list3 == list4); // true
+}
+```
+3. Type test operators
+
+`as`Typecast 
+```
+import 'dart:math' as math;
+void main() {  
+  var list = [1, 2.0, "test", null];
+  var i = list[0] as int;
+  var d = list[1] as double;
+  var s = list[2] as String;
+  var n = list[3] as Null;
+}
+````
+
+`is` true if the object has the specified type
+After checking the type of an object, Dart can now access the methods of this object. 
+```
+void main() {  
+  var list = [1, 2.0, "test", null]..forEach((element) {
+    if (element is int) {
+      print("$element is of in type int");
+  print(element.isEven); // Accessing methods of an integer
+
+    } else if (element is double) {
+      print("$element is of in type double");
+    }
+  });
+}
+```
+`is!` true if the object doesn't have the specified type
+
+4. conditonal expression
+
+`condition ? expr1 : expr2;`
+--> if the condition is true expr1 will be evaluated if the condition is false, the second expr2 will be evaluated.
+
+`expr1 ?? expr2;`
+--> if expr1 is not null, then that expression will evaluate; otherwise expr2 will be evaluated. 
+
+
+**Thoughts**: 
+I think I will fall in love with named arguments - just a feeling - that knowing the order doesn't matter anymore, and you can see what params are being set to what value seems like a huge advantage. 
+
+
 ### Day 16: January 16, 2022
 
 **Today's Progress**: Today, I  did exersice 6-9 from from [this](https://hackmd.io/@kuzmapetrovich/S1x90jWGP) page.
