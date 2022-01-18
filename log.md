@@ -1,5 +1,155 @@
 # 100 Days Of Code - Log
 
+### Day 18: January 18, 2022
+
+**Today's Progress**: I watched the video "#14 - Dart Control Flow Statements - if/else, for, while, switch, throw, catch + ENUMS & EXCEPTIONS" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. for loop
+```
+void main() {  
+  var list = [1,2,4,5];
+  
+  for (var i = 0; i < list.length; i++) {
+    print(list[i]);
+  }
+  
+  for (var item in list) {
+    print(item);
+  }
+  
+  list.forEach(print);
+}
+```
+
+2. while loop, and do-while
+```
+void main() {  
+  int i = 0;
+  while(i != 5) {
+    i++;
+    print(i);
+  }
+  
+  i = 0;
+// will always enter the loop nomatter what condition is set.
+  do {
+    i++; 
+    print(i);
+  } while (i != 5);
+}
+``` 
+
+3. break
+
+Used to breake out of a loop.
+```
+void main() {  
+  var list = [1,2,4,5];
+  
+  for (var item in list) {
+    print(item);
+    if (item == 2) {
+      break;
+    }
+  }
+ }
+```
+4. continue
+
+Makes it possible to skip one or more iterations i a loop.
+```
+void main() {  
+  var list = [1,2,4,5];
+  
+  for (var item in list) {
+    if (item == 1) {
+      continue;
+    }
+    print(item);
+  }
+ }
+```
+5. switch 
+```
+void main() {    
+  var condition = "Sunny";
+  switch (condition) {
+    case "Sunny":
+      print("It's sunny");
+      break;
+    case "Cloudy":
+       print("It's cloudy");
+      break;
+    default:
+      print("Unknown weather");
+  }
+ }
+```
+6. Enums
+
+Is a class that is used to represent a fixed number of constant values.
+```
+enum Condition { sunny, cloudy, drizzly, rainy }
+
+void main() {  
+  print(Condition.rainy);
+}
+```
+7. Assert statement
+```
+void main() {    
+  var list = [];
+  
+  assert(list.isNotEmpty, 'List most not be empty!');
+}
+```
+8. Exceptions
+
+try, throw, catch and final
+```
+import 'dart:math' as math;
+
+void main() {    
+  int min = -1; 
+  int max = 2;
+  int zero = min + math.Random().nextInt(max-min);
+  
+  print("Random zero $zero");
+  
+  try {
+    if (zero < 0) {
+      throw NegativeValue(message: "Negative value");
+    } else if (zero > 0) {
+      throw PositiveValue(message: "Negative value");
+    } 
+  } on NegativeValue {
+      print("The value is Negative");
+  } catch(e) {
+    if (e is PositiveValue) {
+      print("The value is positve");
+    }
+  } finally {
+    zero = 0;
+  }
+  
+  if (zero == 0) {
+    print('Zero at the end: $zero');
+  }
+}
+
+class NegativeValue implements Exception {
+  final String message;
+  NegativeValue({required this.message});
+}
+
+class PositiveValue implements Exception {
+  final String message;
+  PositiveValue({required this.message});
+}
+```
+
+
 ### Day 17: January 17, 2022
 
 **Today's Progress**: I watched the video "#12 - Dart Functions - Anonymous Functions, Positional & Named Parameters, Lambdas, Closures, Scope" and "#13 - Dart Operators - Everything you need to know + Comparing 2 Objects in Dart" from `Dart - from Novice to Expert`.
