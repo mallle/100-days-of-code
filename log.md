@@ -1,5 +1,340 @@
 # 100 Days Of Code - Log
 
+### Day 19: January 19, 2022
+
+**Today's Progress**: I watched the video "#15 - Dart Classes Explained I - All Fields, Methods, Constructors, Operators, Getters/Setters & Singleton
+" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. Class
+```
+class A {}
+
+void main() {    
+  var a = A(); //
+  var hashcode = a.hashCode;
+  
+  print(hashcode);
+}
+```
+
+2. Instance variables (fields)
+
+All fields inside a class have a default getter method.
+All non-final and late final fields have a default setter method. (Normal final fields can't be set outside the class, only inside constructors):
+
+final => field can only be set once.
+static => field is accesed without instantiating the class
+late => can be initialised later
+```
+class A {
+  // Private field --> can't be acces outside of the field/libary
+  int? _private;
+  
+  int? a;
+  int b = 1;
+  
+  // Can only be set at declaration.
+  final int c = 2;
+  
+  late int d;
+  late final int e;
+  // Will only be inizialized after the first time it's accessed 
+  late final int f = 5;
+  
+  static int g = 6;
+  static late int h;
+  static late int i = 8;
+  static late final int j;
+  
+  static const int k = 10;
+}
+```
+3. Methods --> functions inside a class
+
+The function header should have the same name as the class
+Constructors do not have a return type, as the simple instantiate a class.
+Static variables can't be set inside the constructor.
+
+Initializer field inside the function body.
+```
+class A {
+  A(
+   int p,
+   int a,
+   int b,
+   int c,
+   int d,
+   int e,
+   int f,
+  ) : this.c = c {
+    _private = p;
+    this.a = a;
+    this.b = b;
+    this.d = d;
+    this.e = e;
+    this.f = f;
+  
+  }
+
+  int? _private;
+  
+  int? a;
+  int b = 1;
+  
+  final int c;
+  
+  late int d;
+  late final int e;
+  late final int f;
+  
+  static int g = 6;
+  static late int h;
+  static late int i = 8;
+  static late final int j;
+  
+  static const int k = 10;
+}
+
+void main() {    
+  var a = A(1,2,3,4,5,6,7);
+}
+```
+4. Initializer list 
+```
+ A(
+   int p,
+   int a,
+   int b,
+   int c,
+   int d,
+   int e,
+   int f,
+  ) : this.c = c,
+    _private = p,
+    this.a = a,
+    this.b = b,
+    this.d = d,
+    this.e = e,
+    this.f = f;
+  
+  
+  int? _private;
+  
+  int? a;
+  int b = 1;
+  
+  final int c;
+  
+  late int d;
+  late final int e;
+  late final int f;
+  
+  static int g = 6;
+  static late int h;
+  static late int i = 8;
+  static late final int j;
+  
+  static const int k = 10;
+}
+
+void main() {    
+  var a = A(1,2,3,4,5,6,7);
+}
+```
+5. inizialise fields inside the parameter list of a constructor
+```
+class A {
+  //! the default constructor
+  A(
+    this._private, {
+    this.a,
+    required this.b,
+    required this.c,
+    required this.d,
+    required this.e,
+    required this.f,
+   });
+  
+  int? _private;
+  
+  int? a;
+  int b = 1;
+  
+  final int c;
+  
+  late int d;
+  late final int e;
+  late final int f;
+  
+  static int g = 6;
+  static late int h;
+  static late int i = 8;
+  static late final int j;
+  
+  static const int k = 10;
+}
+
+void main() {    
+  var a = A(1, a: 2, b: 3, c: 4, d: 5, e:6, f:7);
+}
+```
+
+6. Named constructors
+```
+class A {
+  //! the default constructor
+  A({
+    required this.x,
+    required this.y,
+  });
+  
+  // Named constructor
+  A.zero() 
+    : x=0, 
+      y = 0;
+
+  // Named constructor  
+  A.fromJson({required Map<String, int> json}) 
+      : x = json['x']!,
+        y = json['y']!;
+          
+  final int x;
+  final int y;
+  
+  @override 
+  String toString() => "A(x: $x, y: $y)";
+}
+
+void main() {    
+  var a = A(x:6, y:7);
+  print("a => $a");
+  
+  var aZero = A.zero();
+  print("aZero => $aZero");
+  
+  var aFromJson = A.fromJson(json: {'x': 5, 'y': 6});
+  print("aFromJson => $aFromJson");
+}
+```
+7. Colling another constructor
+```
+class A {
+  //! the default constructor
+  A({
+    required this.x,
+    required this.y,
+  });
+          
+  // Colling another constructor
+  A.zeroX({required int y}) : this(x: 0, y: y);
+  
+  final int x;
+  final int y;
+  
+  @override 
+  String toString() => "A(x: $x, y: $y)";
+}
+```
+
+8. Constant constructors
+```
+class Point {
+  //! Const constructor only works with final fields.
+  const Point({
+    required this.x,
+    required this.y,
+  });
+  
+  final int x;
+  final int y;
+  static const Point origin = Point(x: 0, y: 0);
+  
+  @override 
+  String toString() => "Point(x: $x, y: $y)";
+}
+
+void main() {    
+  const p1 = Point(x: 1, y: 1);
+  const p2 = Point(x: 1, y: 1);
+  identical(p1, p2);
+  print('identical(p1,p1) --> ${identical(p1, p2)}');
+}
+```
+9. Factory constructors
+
+Using the keyword `factory` allows you to use the return keyword. It must always return an instance of the class.
+```
+class Point {
+  Point({
+    required this.x,
+    required this.y,
+  });
+  
+  factory Point.random({required bool isPositive}) {
+    return Point(x: 1, y: 2);
+  }
+  
+  final int x;
+  final int y;
+  
+  @override 
+  String toString() => "Point(x: $x, y: $y)";
+}
+
+void main() {    
+  Point p1 = Point.random(isPositive: true);
+  print('$p1');
+}
+```
+10. Singleton:
+
+There should only be one instance of this class in the entire project. 
+```
+class Singleton{
+  Singleton._privateConstructor();
+  static final _instance = Singleton._privateConstructor();
+  factory Singleton() => _instance;
+}
+
+void main() {    
+  var s1 = Singleton();
+  var s2 = Singleton();
+  print("identical(s1, s2) --> ${identical(s1, s2)}"); // identical(s1, s2) --> true
+}
+```
+11. Getters and Setters
+
+Dart provides getters and setters without having to write them out. 
+```
+class Car {
+  late int age;
+  set manufacturedYear(int value) => age = 2022 - value;
+}
+
+void main() {    
+  var car = Car();
+  car.manufacturedYear = 2006;
+  print("car.age --> ${car.age}");
+}
+```
+12. Static methods:
+
+Do not have access to `this` keyword, can be accessed without instantiation a class.
+```
+class Car {
+  static test() {
+    return "hallo";
+  }
+}
+
+void main() {    
+  print(Car.test());
+}
+```
+
+**Links**: [Dart Classes Explained I - All Fields, Methods, Constructors, Operators, Getters/Setters & Singleton](https://www.youtube.com/watch?v=7rfehxYBukk&list=PLptHs0ZDJKt_fLp8ImPQVc1obUJKDSQL7&index=16)
+
 ### Day 18: January 18, 2022
 
 **Today's Progress**: I watched the video "#14 - Dart Control Flow Statements - if/else, for, while, switch, throw, catch + ENUMS & EXCEPTIONS" from `Dart - from Novice to Expert`.
