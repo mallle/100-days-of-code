@@ -1,5 +1,136 @@
 # 100 Days Of Code - Log
 
+### Day 20: January 20, 2022
+
+**Today's Progress**: I watched half of the video "#16 - Dart Classes Explained II - Inheritance(extends) vs. Abstraction(implements) vs. Mixins(with)" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. Every class will extend from the super class called Object 
+
+2. Inheritance --> sharing behavior from one class to another. If once class extends another --> the class that extends another class will have all fields and methods from the class it extends. A class can only extend one class.
+
+3. The key-word `this`is for the current class. The key word `super` refers to the parent class.
+
+4. Example: 
+```
+class Animal {
+  final String name;
+  
+  Animal({required this.name});
+  Animal.fromJson() : name = 'Jerry';
+  
+  void whatAmI() => print("I`m an animal!");
+}
+
+class Bird extends Animal {
+  // Call the animal contructor
+  Bird(String name) : super(name: name); 
+  //Bird.fromJson(String name) : super.fromJson();
+}
+
+class Duck extends Bird {
+  Duck(String name) : super(name); 
+  
+  @override
+  void whatAmI() => print("I`m a Duck!");
+}
+
+void main() {    
+  Duck duck = Duck('Munchkin');
+  print(duck.name);
+  duck.whatAmI();
+}
+```
+5. Key word `Covariant`
+
+Used to tighten a type from a superclass to a subclass. 
+[Read more here](https://dart.dev/guides/language/sound-problems#the-covariant-keyword).
+```
+class Animal {
+  final String name;
+  
+  Animal({required this.name});
+  Animal.fromJson() : name = 'Jerry';
+  
+  void whatAmI() => print("I`m an animal!");
+  void chase(Animal a) {}
+}
+
+class Mouse extends Animal {
+  Mouse() : super(name: 'jerry');
+}
+
+class Cat extends Animal {
+  Cat() : super(name: 'Tom');
+  
+  @override
+  void chase(covariant Mouse m) {}
+}
+```
+ 6. Polymorphism 
+
+Is achieved by overriding a method  (@override) or overloading methods with optional parameters (@overload).
+
+7. Abstraction
+
+Abstract classes can't be instantiated. 
+--> Abstract classes
+--> Abstract methods: Methods without a function body -> can only be set inside an abstract class.
+--> Interfaces: Are just a contact that you will promise to implement in a class. Interfaces are created with the use of an abstract class.
+
+
+8. Keyword `implements`
+
+Forces behavior of interfaces to derived (abgeleitete) classes. One class can implement more classes.
+```
+abstract class UserRepositoryInterface {
+  late final List<int> userList;
+  
+  void create();
+  List<int> read();
+}
+
+class UserRepository implements UserRepositoryInterface {
+  @override
+  late final List<int> userList;
+  
+  @override
+  void create() => print('Created!');
+  
+    @override
+  List<int> read() => [1, 2, 3];
+}
+```
+Explicit interface = Abstract class
+Implicit interface = Every class
+A class can extend one other class and implement as many classes as wanted.
+
+9. External key word
+
+Adds an abstract method to a class.
+```
+class Animal {
+  final String name;
+  
+  Animal({required this.name});
+  
+  void whatAmI() => print("I`m an animal!");
+  void chase(Animal a) {}
+  
+  external void doSomething();
+}
+
+class Mouse extends Animal {
+  Mouse() : super(name: 'jerry');
+  
+  @override
+  void doSomething() => print("Hallo");
+}
+```
+
+**Links**: [Dart Classes Explained II - Inheritance(extends) vs. Abstraction(implements) vs. Mixins(with)](https://www.youtube.com/watch?v=OThpFGSzV1g&list=PLptHs0ZDJKt_fLp8ImPQVc1obUJKDSQL7&index=17)
+
+
 ### Day 19: January 19, 2022
 
 **Today's Progress**: I watched the video "#15 - Dart Classes Explained I - All Fields, Methods, Constructors, Operators, Getters/Setters & Singleton
