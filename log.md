@@ -1,5 +1,84 @@
 # 100 Days Of Code - Log
 
+### Day 21: January 24, 2022
+
+**Today's Progress**: I watched the last half of the video "#16 - Dart Classes Explained II - Inheritance(extends) vs. Abstraction(implements) vs. Mixins(with)" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. Mixins. 
+
+Mixins are used to share behaivor between one or more classes.
+Mixins are regular classes with fields and methods that other classes can use. But a mixin does not have a constructor. 
+Mixins can't be instantiated. 
+Mixins can't be extened.
+There are three ways of declaring a mixin:
+normal class without a constructor:
+```
+class A {}
+Abstract class.
+abstract class A {
+  void method(){}
+}
+Mixin keyword
+mixin A {
+  void method(){}
+}
+```
+2. Use a mixin with another class by using the keyword with.
+
+--> it works a bit like the keyword implements, but unlike implemented classes, we don't have to implement all methods when using a mixin. 
+```
+class Performer {
+  void perform() => print("Performs!");
+}
+
+mixin Guitarist {
+  void playGuitar() => print("Playing the guitar");
+  void perform() => playGuitar();
+}
+
+mixin Drummer {
+  void playDrums() => print("Playing the drums");
+  void perform() => playDrums();
+}
+
+class Musician extends Performer with Drummer, Guitarist {
+  
+}
+
+void main() {    
+  Musician musician = Musician();
+  musician.playDrums(); //Playing the drums
+  musician.playGuitar(); //Playing the guitar
+  musician.perform(); //Playing the guitar
+}
+```
+The order of how you mixin classes matters, here the Performer is mixed in with the Drummer first, and then mixin with the Guitarist, and therefore we the perform method from the Guitarist mixin.  
+
+3. Extension Methods
+
+It can be used when you want to add extra functionality to a class that cant be extended. 
+```
+extension IntegerExtention on int {
+  int get luckyNumber => 12;
+  int add15() => this + 15;
+}
+
+void main() {    
+  print(1.luckyNumber); // 12
+  print(10.add15()); // 25
+}
+```
+4. Prevent classes from being extended in other files by using a private constructor: 
+```
+class A {
+  // Private constructor
+  A._();
+}
+```
+**Thoughts**: 
+Extension Methods seams pretty cool.
+
 ### Day 20: January 20, 2022
 
 **Today's Progress**: I watched half of the video "#16 - Dart Classes Explained II - Inheritance(extends) vs. Abstraction(implements) vs. Mixins(with)" from `Dart - from Novice to Expert`.
