@@ -1,5 +1,85 @@
 # 100 Days Of Code - Log
 
+### Day 23: January 26, 2022
+
+**Today's Progress**: I watched the last half of the video "#18 - Dart Libraries & Private Fields - import, export, part, part of" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. Every .dart file represent a new library in Dart
+2. Every library that should be available to other Packages has to be placed in the Dart project's lib folder.
+3. You can use the library keyword in a file to tell Dart that a file is a library - (this is not required because all files are libraries, and this is automatically added).
+4. Private fields and methods are prefixed with a underscore. 
+library first_library;
+```
+class A {
+  final int _privateField = 5;
+  void _privateMethod() {}
+
+  final int publicField = 10;
+  void publicMethod() {}
+}
+```
+Dart only has Library private fields and not class private fields; this means that you can use private fields all over a library and not only in a specific class. 
+
+5.  Import a library: 
+```
+import 'package:dart_exercise/first_library.dart';
+
+void main() {
+  var a = A();
+}
+```
+6. Make more files into one library with the keywords part and part of
+```
+// File first_library.dart
+library first_library;
+
+part 'first_library_extention_1.dart';
+part 'first_library_extention_2.dart';
+
+class A {
+  final int _privateField = 5;
+  void _privateMethod() {}
+
+  final int publicField = 10;
+  void publicMethod() {}
+}
+
+void randomFunction() {
+  var a = A();
+  a._privateField;
+  a.publicMethod();
+}
+
+// File first_library_extention_1.dart
+part of 'first_library.dart';
+
+void randomFunction1() {
+}
+```
+In a file where you use the part of keyword, you can't use any import statements. Importing other libraries has to be done in the `part` file, because this is the library's root.
+
+6.  A library can contain other libraries.  
+```
+// File top_library.dart 
+library top_library;
+
+export 'first_library_extention_1.dart';
+export 'first_library_extention_2.dart';
+```
+
+Now you can import the whole library or only the parts like 'first_library_extention_1.dart'.
+
+7. Rules: 
+1. Declare all your libraries containing feature implementations inside the lib folder
+2. Never reach in or out of the lib folder using relative imports. Use the "package" directive.
+3. Inside the library, we can use the relative imports. 
+
+
+**Thoughts**: 
+NOOOOOO - I forgot to copy paste my content written in Grammyly from day 22 - and now its gone :(
+
+
 ### Day 21: January 24, 2022
 
 **Today's Progress**: I watched the last half of the video "#16 - Dart Classes Explained II - Inheritance(extends) vs. Abstraction(implements) vs. Mixins(with)" from `Dart - from Novice to Expert`.
