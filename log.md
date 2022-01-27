@@ -1,5 +1,25 @@
 # 100 Days Of Code - Log
 
+### Day 24: January 27, 2022
+
+**Today's Progress**: I watched the last half of the video "#19 - Dart Testing Explained - Unit, Integration, E2E and why you should aim for 100% code coverage" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. 100% code coverage - is when every single line of code is tested. 
+2. The name of a test file should contain the name of the file's to be tested and  _test: triangle_test.dart
+3. Unit tests: 
+Unit tests focus on testing the smallest piece of software like function/method or a class.
+4. Mock Object
+Mock objects are simulated objects that can mimic the behavior of a real object lie user-actions, events and instantiate child components. 
+5. Component "Widget" Tests
+Tests that verify that a component behaves as expected. A component might consist of multiple classes. Objects are often mocked to test components/widgets to simulate a certain behavior. 
+6. Integrations "E2E" (End-To-End) Tests
+E2E Test verifies either the whole app's behavior or significant portions of the app. 
+
+**Thoughts**: 
+Defenetly have to dig deeper into tests, and how to write them in Dart. 
+
+
 ### Day 23: January 26, 2022
 
 **Today's Progress**: I watched the last half of the video "#18 - Dart Libraries & Private Fields - import, export, part, part of" from `Dart - from Novice to Expert`.
