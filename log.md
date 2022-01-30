@@ -1,5 +1,43 @@
 # 100 Days Of Code - Log
 
+### Day 25: January 30, 2022
+
+**Today's Progress**: I watched the last half of the video "#20 - Dart Isolates, Threads, The Event Loop, Microtasks, Synchronous & Asynchronous workflows" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. Synchronously => when a line of code get processed after each other, in the order. You can't move to the next step without solving the current step. 
+2. Asynchronously => Allow code to proceed with other lines of code while some part of the code is taking a bit longer to finish. 
+3. Everything that takes a longer time to process should be handled asynchronously so the program isn't blocked in the meantime. Examples could be network requests or storing a file. 
+4. Flutter is single-threaded and runs in an isolate.
+An Isolate has: 
+- An event queue (only one because it's single-threaded)
+- Events (every line of code)
+- Event loop, with an event handler, the event handler process every line of code and blocks the program while calculating. 
+- A helper thread this thread acts as a garbage collector and cleans up the code. 
+
+5. Parallelism: Having multiple isolates, these do not use the same memory, so it's not easy to communicate between isolates. 
+
+5. Microtasks ques: Microtasks events have a higher priority than future events. 
+6. example:
+```
+import 'dart:math';
+
+void main() {    
+  print("#1 - squrt(4) -> ${sqrt(4)}");
+  print("#2 - multiply(15*4) -> ${(15*4)}");
+  print("#3 - squrt(4) -> ${50 + 10}");
+  Future.delayed(const Duration(seconds: 5), () =>  print("#4 - mulitiply(4*5) -> ${4*5}"));
+  print("#5 - difference(20,5) -> ${20 - 5}");
+}
+
+prints: 
+#1 - squrt(4) -> 2
+#2 - multiply(15*4) -> 60
+#3 - squrt(4) -> 60
+#5 - difference(20,5) -> 15
+#4 - mulitiply(4*5) -> 20
+```
+
 ### Day 24: January 27, 2022
 
 **Today's Progress**: I watched the last half of the video "#19 - Dart Testing Explained - Unit, Integration, E2E and why you should aim for 100% code coverage" from `Dart - from Novice to Expert`.
