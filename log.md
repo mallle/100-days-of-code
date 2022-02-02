@@ -1,5 +1,76 @@
 # 100 Days Of Code - Log
 
+### Day 26: January 31, 2022
+
+**Today's Progress**: I watched the video "#21 - Dart Synchronous Workflows, Iterables, sync* generator functions, yield, yield*" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. Synchronous operation: A task that needs to be solved before proceeding to solve the next task. 
+2. Iterable: is constructed lazily => so not the whole list is retured only the current element that is accessed
+you can loop over it with the help oft his functions: `iterator(curr, nextItem())`
+it doesn't need to have a specified length
+Assessing an element will regenerate all items until the desired one is found.
+3. Returning 1 value:
+Synchronous: Type
+ Asynchronous: future<Type>
+4. Returning 0 or more values: 
+Synchronous: iterable<Type>
+ Asynchronous: stream<Type>
+
+5. Example: 
+```
+void main() {    
+  final a = showNormal(4);
+  print(a.last);
+  print(a.first);
+  final b = showGenerator(4);
+  print(b.last);
+  print(b.first);
+}
+
+List<int> showNormal(int n) {
+  print('Normal started');
+  final list = <int>[];
+  for (var i = 1; i <=n; i++) {
+     print("i -> $i");
+     list.add(i);
+  }
+  print('Normal endet');
+  return list;
+}
+
+Iterable<int> showGenerator(int n) sync* {
+  print('Generator started');
+  for (var i = 1; i <=n; i++) {
+    print("i -> $i");
+    yield i; 
+  }
+  print('Generator endet');
+}
+
+prints: 
+Normal started
+i -> 1
+i -> 2
+i -> 3
+i -> 4
+Normal endet
+4
+1
+Generator started
+i -> 1
+i -> 2
+i -> 3
+i -> 4
+Generator endet
+4
+Generator started
+i -> 1
+1
+```
+6. Asynchrony => means items are generated in the background while you can process other tasks
+7. Laziness => means items are generated synchronously, but only at the time, you will need them.
+
 ### Day 25: January 30, 2022
 
 **Today's Progress**: I watched the last half of the video "#20 - Dart Isolates, Threads, The Event Loop, Microtasks, Synchronous & Asynchronous workflows" from `Dart - from Novice to Expert`.
