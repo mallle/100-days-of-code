@@ -1,5 +1,62 @@
 # 100 Days Of Code - Log
 
+### Day 27: February 3, 2022
+
+**Today's Progress**: I watched the last half of the video "#22 - Dart Asynchronous Workflows - All Futures, Streams, Async Generator Functions" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. Synchronous operations: A task that needs to be solved before solving the next one. 
+2. Asynchronous operations: A task that doesn't need to be solved before the next task. 
+3. Futures -> Asynchronous event. 
+can be: 
+unprocessed (event is waiting in the event queue)
+Uncompleted (processed by the event loop, but the value has not been retrieved yet. 
+Completed with an expected value
+completed with an error
+4. Example
+```
+void main() {
+  print("Start");
+
+  Future(() => 1).then(print); // .then(print) => tells dart to print the returned value.
+  Future(() => Future(() => 2)).then(print).onError((error, stackTrace) => null); // .onError() Can be used to catch the errors from a Future.
+
+  Future.delayed(const Duration(seconds: 1), () => 3).then(print).whenComplete(() => null); // .whenComplete() is returns the value no matter if the value is an error or the expected value.
+  Future.delayed(const Duration(seconds: 1), () => Future(() => 4)).then(print);
+
+  Future.value(5).then(print);
+  Future.value(Future(() => 6)).then(print);
+
+  Future.sync(() => 7).then(print);
+  Future.sync(() => Future(() => 8)).then(print);
+
+  Future.microtask(() => 9).then(print);
+  Future.microtask(() => Future(() => 10)).then(print);
+
+  Future(() => 11).then(print);
+  Future(() => Future(() => 12)).then(print);
+
+  print("End");
+}
+
+
+prints: 
+Start
+End
+5
+7
+9
+1
+6
+8
+11
+10
+2
+12
+3
+4
+````
+
 ### Day 26: January 31, 2022
 
 **Today's Progress**: I watched the video "#21 - Dart Synchronous Workflows, Iterables, sync* generator functions, yield, yield*" from `Dart - from Novice to Expert`.
