@@ -1,5 +1,107 @@
 # 100 Days Of Code - Log
 
+### Day 28: February 5, 2022
+
+**Today's Progress**: I watched the last half of the video "#22 - Dart Asynchronous Workflows - All Futures, Streams, Async Generator Functions" from `Dart - from Novice to Expert`.
+
+**Learned**:
+1. Example: 
+```
+void main() {
+  test2Future();
+}
+
+void test2Future() {
+  print("1");
+  scheduleMicrotask(() => print(2));
+
+  Future.delayed(const Duration(seconds: 1), () => print("3"));
+
+  Future(() => print("4")).then((_) => print(5)).then((_) {
+    print("6");
+    scheduleMicrotask(() => print("7"));
+  }).then((_) => print("8"));
+
+  scheduleMicrotask(() => print("9"));
+
+  Future(() => print("10"))
+    .then((_) => Future(() => print('11')))
+    .then((_) => print('12'));
+
+  Future(() => print('13'));
+  scheduleMicrotask(() => print('14'));
+  print(15);
+}
+
+Prints
+1
+15
+2
+9
+14
+4
+5
+6
+8
+7
+10
+13
+11
+12
+3
+```
+2. Keyword await. To wait for a future to complete before it assigns its value to a variable. 
+```
+void main() {
+  late final int a;
+
+  print("Start");
+
+  Future(() => 1).then((value) => a = value);
+
+  print(a);
+
+```
+  print("end");
+}
+=> this will through an error because a hasn't been assigned a value yet. In the future, we try to assign a value to a, but this will happen sometime in the future, and not before we are colling an int the print statement on the following line. 
+
+Using the await keyword: 
+```
+void main() {
+  //testFuture();
+  //test2Future();
+
+  late final int a;
+
+  print("Start");
+
+  Future(() => 1).then((value) => a = value);
+
+  print(a);
+
+  print("end");
+}
+```
+This will pause the program until the future is resolved and we have a synchronous workflow again. 
+
+3. .then and await togehter
+```
+Future main() async {
+  late final int a;
+
+  print("Start");
+
+  await Future(() => 1).then((value) => a = value);
+
+  print(a);
+
+  print("end");
+}
+```
+4. Streams -> can return 0, 1 or multiple values. 
+
+
 ### Day 27: February 3, 2022
 
 **Today's Progress**: I watched the last half of the video "#22 - Dart Asynchronous Workflows - All Futures, Streams, Async Generator Functions" from `Dart - from Novice to Expert`.
