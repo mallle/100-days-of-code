@@ -1,4 +1,55 @@
 # 100 Days Of Code - Log
+### Day 30: February 7, 2022
+
+**Today's Progress**: I watched the course "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. Flutter is all about widgets
+2. Widgets are building blocks that get rendered to the screen - like a list, app bar, or list items. 
+3. Class names are written in PascalCase
+4. Every widget is a Dart Class with a build() method.
+5. @override is a decorator -> @override is used to show a method is overridden on purpose.  
+6. Example of a hello-world app:
+lib/main.dart
+```
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override // Decorator
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Text("Hello!"),
+    );
+  }
+}
+```
+7. The widget Scaffold() creates a basic page design. 
+8. Hot reload: Injects our new code into the existing one without having to rebuild the app. 
+9. Example with a Scaffold() widget. 
+```
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override // Decorator
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("My first App!"),
+        ),
+        body: Text("This is my default text!"),
+      ),
+    );
+  }
+}
+```
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 
 ### Day 29: February 6, 2022
 
