@@ -1,5 +1,20 @@
 # 100 Days Of Code - Log
 
+### Day 32: February 9, 2022
+
+**Today's Progress**: I moved on with the course "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. The setState() method calls the Build() method of the widget.
+2. Private classes are written with an underscore in front of the name: _MyAppState 
+
+**Thoughts**: Today was a short session. But better than none. 
+
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
+
 ### Day 31: February 8, 2022
 
 **Today's Progress**: I moved on with the course "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
