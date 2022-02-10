@@ -1,5 +1,28 @@
 # 100 Days Of Code - Log
 
+### Day 33: February 10, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. Container() widget. This widget always tries to be as small as possible. But it's also possible to give width and height and margin and padding.
+2. Padding: Spacing inside of the container. 
+3. Margin: Spacing around the container
+4. Border: The border is "placed" between the padding and margin. 
+
+Example: 
+Container
+Margin
+Border
+Padding
+Child Component
+
+5. Widget catalog: https://docs.flutter.dev/development/ui/widgets
+
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 ### Day 32: February 9, 2022
 
 **Today's Progress**: I moved on with the course "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
@@ -9,7 +32,6 @@
 2. Private classes are written with an underscore in front of the name: _MyAppState 
 
 **Thoughts**: Today was a short session. But better than none. 
-
 
 **Links**:
 [Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
