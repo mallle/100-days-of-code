@@ -1,4 +1,42 @@
 # 100 Days Of Code - Log
+
+### Day 31: February 8, 2022
+
+**Today's Progress**: I moved on with the course "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. Visible widgets: Output and input. These are visual widgets, like Buttons, Text, or Images.
+2. Invisible widgets: They help control the app's layout and handle the widget tree, but they aren't visible, so they are used to layout the Visible Widgets. Examples of invisible widgets would be Row, Column, or Listview.
+3. `Column()` widget: Renders widgets above each other. 
+```
+Column(
+  children: [
+    Text("The Question"),
+    RaisedButton(
+      child: Text("Answer"),
+      onPressed: null,
+    ),
+  ],
+);
+```
+4. `Row()` widget: Renders widgets next to each other. 
+
+5. State: Data/Information used by the App.
+
+App State:
+- Authenticated Users
+- Loaded jobs
+
+Widget State:
+- Current User Input
+- Should a Loading Spinner be shown?
+
+6. Stateless => Data can change externally, and the Widget gets (re)rendered when externally data changes.
+7. Stateful => Data can change externally and internally, and the Widget gets (re)rendered when the externally or internally data changes.
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 ### Day 30: February 7, 2022
 
 **Today's Progress**: I watched the course "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
