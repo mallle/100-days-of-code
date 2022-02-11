@@ -1,5 +1,20 @@
 # 100 Days Of Code - Log
 
+### Day 34: February 11, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. "Lifting the state up" is a concept where you manage the state on the shared widget.
+2. Splitting larger widgets into smaller widgets makes a lot of sense. 
+3. a final variable can only be set  once.
+
+**Thoughts**: 
+Today's session had a lot of repetition of some concepts in Dart. 
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 ### Day 33: February 10, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
