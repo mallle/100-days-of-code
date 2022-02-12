@@ -7,6 +7,7 @@
 **Learned**:
 1. Getter: Getters are special methods that provide read access to an object’s properties.
 It's also possible to create additional properties by implementing getters, using the get and set keywords: A getter does not take any arguments and is added by using the keyword `get`:
+```
 class Rectangle {
   double left, top, width, height;
 
@@ -18,6 +19,7 @@ class Rectangle {
   double get bottom => top + height;
   set bottom(double value) => top = value - height;
 }
+```
 2. Button widgets: OutlinedButton(), TextButton(), ElevatedButton().
 ```
 ElevatedButton(
