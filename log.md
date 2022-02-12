@@ -1,5 +1,52 @@
 # 100 Days Of Code - Log
 
+### Day 35: February 12, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. Getter: Getters are special methods that provide read access to an object’s properties.
+It's also possible to create additional properties by implementing getters, using the get and set keywords: A getter does not take any arguments and is added by using the keyword `get`:
+class Rectangle {
+  double left, top, width, height;
+
+  Rectangle(this.left, this.top, this.width, this.height);
+
+  // Define two calculated properties: right and bottom.
+  double get right => left + width;
+  set right(double value) => left = value - width;
+  double get bottom => top + height;
+  set bottom(double value) => top = value - height;
+}
+2. Button widgets: OutlinedButton(), TextButton(), ElevatedButton().
+```
+ElevatedButton(
+  style: ElevatedButton.styleFrom(
+    primary: Colors.orange,
+    onPrimary: Colors.white,
+  ),
+  onPressed: () => print('Pressed Elevated button'),
+  child: Text('A Raised Button'),
+),
+TextButton(
+  child: Text("A Flat button"),
+  style: TextButton.styleFrom(primary: Colors.orange),
+  onPressed: () => print('Pressed Flat button'),
+),
+OutlinedButton(
+  onPressed: () => print('Pressed Outlined button'),
+  child: Text("A outlined button"),
+  style: OutlinedButton.styleFrom(
+    primary: Colors.orange,
+    side: BorderSide(color: Colors.orange),
+  ),
+)
+```
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
+
 ### Day 34: February 11, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
