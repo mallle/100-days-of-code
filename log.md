@@ -1,5 +1,19 @@
 # 100 Days Of Code - Log
 
+### Day 36: February 15, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. How to install an app on an actual Android device, and not only on the emulator. 
+2. How to install an app on an actual iOS device, and not only on the emulator. 
+3. Syntax errors: This could be a missing semicolon or typo in a keyword. 
+4. Logical errors: The code is not executed as intended. 
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
+
 ### Day 35: February 12, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
