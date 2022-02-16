@@ -1,5 +1,24 @@
 # 100 Days Of Code - Log
 
+### Day 37: February 16, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. App/Page Setup: MaterialApp or CupertinoApp and Scaffold/CupertinoPageScaffold
+Layout: Container, Row, and Column.
+2. Row/Column Children: Flexible and Expanded
+3. Content Containers: Stack, Card, 
+4. Repeat Elements: ListView, GridView, ListTile 
+5. Content Types: Text, Image, Icon
+6. User input: TextField, Buttons, GestureDetector, InkWell
+7. Flutter package manager: https://fvm.app/
+8. Create a new project with fvm installed: `fvm fluuter create projecet_name`
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
+
 ### Day 36: February 15, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
