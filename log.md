@@ -1,5 +1,21 @@
 # 100 Days Of Code - Log
 
+### Day 39: February 18, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. Container: takes only one child widget, has a lot of alignment and styling options, and has a flexible width (eg. child width or available width). Containers are perfekt for custom styling and alignment.
+2. Column/Rows: takes multiple child widgets, has alignment options but no styling options. A column always takes the available height, and a row takes the available width. Must-use widget that should sit next to or above each other. 
+3. It's possible to combine Container and Column/Row.
+4. [https://pub.dev/](https://pub.dev/): This website has all packages available for Dart and Flutter. 
+5. intl is a package that can be used for e.g., translations and date formatting
+6. To install a package, we need to add the package name and version under the key `dependencies` in the `pubspec.yaml` file and `run flutter packages get` to install the package. 
+
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 ### Day 38: February 17, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
