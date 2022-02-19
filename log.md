@@ -1,5 +1,31 @@
 # 100 Days Of Code - Log
 
+### Day 40: February 19, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. The commando for getting packages dependencies is `flutter pub get` not `flutter packages get`.
+2. The input from a TextField is always a String.
+3. Converting a string to a double: `double.parse("3.4")`
+4. To track the user input on a TextField we can use the  `TextEditingController()`. Like this:
+```
+final titleController = TextEditingController();
+
+TextField(
+  decoration: InputDecoration(
+    labelText: 'Title',
+  ),
+  controller: titleController,
+),
+```
+to access the value we can use `titleController.text`.
+
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
+
 ### Day 39: February 18, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
@@ -10,7 +36,7 @@
 3. It's possible to combine Container and Column/Row.
 4. [https://pub.dev/](https://pub.dev/): This website has all packages available for Dart and Flutter. 
 5. intl is a package that can be used for e.g., translations and date formatting
-6. To install a package, we need to add the package name and version under the key `dependencies` in the `pubspec.yaml` file and `run flutter packages get` to install the package. 
+6. To install a package, we need to add the package name and version under the key `dependencies` in the `pubspec.yaml` file and run `flutter pub get` to install the package. 
 
 
 **Links**:
