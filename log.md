@@ -1,5 +1,19 @@
 # 100 Days Of Code - Log
 
+### Day 41: February 20, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. SingleChildScrollView - allows scrolling on a single child widget if it gets too big for the screen.
+2. ListView can be used in two different ways. ListView(children: []) and ListView.builder(). The ListView.builder() only loads/renders the items visible to the screen, optimizing performance.
+
+**Thoughts**: 
+Todays session was quite short - but better than nothing :)
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 ### Day 40: February 19, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
