@@ -1,5 +1,17 @@
 # 100 Days Of Code - Log
 
+Day 42: February 21, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. How to add a theme to the MatrialApp, by using the theme argument in the MaterialApp object. When applying the theme, it's possible to use the primarySwatch argument on the theme object to add colors with different shades.
+2. Applying fonts to a project, with the use of the pubspec.yaml file. 
+3. Applying images to a project, with the use of the pubspec.yaml file. 
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 ### Day 41: February 20, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
