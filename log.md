@@ -1,6 +1,19 @@
 # 100 Days Of Code - Log
 
-Day 42: February 21, 2022
+### Day 44: February 23, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. FractionallySizedBox: A widget that sizes its child to a fraction of the total available space. You can set the heightFraction and withFraction on this widget and add a child widget, for instance, a Container with the decoration property defined, to style the fraction.
+2. FittedBox: Scales and positions its child within itself according to fit. 
+3. Padding: A widget used to only add padding, through the property padding, using the class EdgeInsets.
+
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
+### Day 43: February 22, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
 
