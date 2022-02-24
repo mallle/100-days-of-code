@@ -1,5 +1,17 @@
 # 100 Days Of Code - Log
 
+### Day 45: February 24, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. Flexible is a widget that controls how a row, column or flex flexes on the screen. It takes the arguments flex, fit and child. 
+If a Row has more Flexible children, and each Flexible widget has flex set to a number, the space for these widgets will be shared regarding the numbers. E.g. one has flex set to 2, and one has flex set to 3. Then the first widget will take 2/5 of the space. 
+2. Expanded is a widget that takes a child widget and the flex argument, but not the fit argument, as it will by default take up all available space. 
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 ### Day 44: February 23, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
