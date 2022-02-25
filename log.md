@@ -20,6 +20,7 @@ WidgetsFlutterBinding.ensureInitialized();  SystemChrome.setPreferredOrientation
 }
 ```
 3. Switch widget: 
+```
 bool _showChart = false;
 Switch(
   value: _showChart,
@@ -29,6 +30,7 @@ Switch(
     });
   },
 );
+```
 
 **Links**:
 [Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
