@@ -1,5 +1,38 @@
 # 100 Days Of Code - Log
 
+### Day 46: February 25, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. The MediaQuery class can be used to get the height and width of a device, and to scale text according to the device settings of the phone. 
+To get geht height we need to use: `MediaQuery.of(context).size.height`
+To set the fontsize dynamicly we need to use the following: 
+`Text('This changes!', style: TextStyle(fontSize: 20 * MediaQuery.of(context).textScaleFactor))`. This text will always be 20 when the user didn't change any device settings.
+2.  Constraint the app to only work in portrait mode: 
+```
+void main() {
+WidgetsFlutterBinding.ensureInitialized();  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
+  runApp(MyApp());
+}
+```
+3. Switch widget: 
+bool _showChart = false;
+Switch(
+  value: _showChart,
+  onChanged: (val) {
+    setState(() {
+      _showChart = val;
+    });
+  },
+);
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 ### Day 45: February 24, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
