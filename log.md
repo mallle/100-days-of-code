@@ -1,5 +1,17 @@
 # 100 Days Of Code - Log
 
+### Day 47: February 26, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. To check if the current mode is landscape mode, we can use the following in the build method of a widget. 
+`final _isLandscape =
+    MediaQuery.of(context).orientation == Orientation.landscape;`
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 ### Day 46: February 25, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
