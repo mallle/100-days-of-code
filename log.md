@@ -1,5 +1,22 @@
 # 100 Days Of Code - Log
 
+### Day 48: February 28, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. How to open the iOs simulator over the command line: 
+`open -a Simulator.app`
+2. Switch.adaptive(), adapted the look of a switch between iOS and Android. 
+3. To find out what Plattform the app is running on, we need to import 'dart:io' and then use `Platform.isIOS`, to check if the Ap is running on iOs. 
+4. CupertinoNavigationBar is the navbar widget used for iOS, and for Android, we can use AppBar.
+5. For iOS it make sense to use the `CupertinoPageScaffold` widget, and for Android the `Scaffold` widget makes sense to use. 
+
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
+
 ### Day 47: February 26, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
