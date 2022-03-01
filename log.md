@@ -1,5 +1,21 @@
 # 100 Days Of Code - Log
 
+### Day 49: March 1, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. Responsive design means adjusting the styles to the device's size; adaptive design means changing styles to fit specific device types like Android or iOS.
+2. Flutter tries to update the screen 60 times per second.  
+3. Widget Tree is controlled by the code we write. The Widget Tree is built by calling the build method in the application's main entry point. The Widget Tree rebuilds often. 
+4. Element Tree is created by Flutter based on the Widget Tree. The element tree links the configuration from the Widget Tree to the actual element. The Element Tree does not rebuild that often.
+5. Render Tree is what we can see on the screen, so the actual rendered objects. The Render Tree does not rebuild that often.
+6. The build method is called every time the state of the application changes. Calling `setState(){}` triggers a rebuild and the build method. A rebuild is also started whenever the MediaQuery.of() object changes; this could be the case if a user rotates the device. 
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
+
 ### Day 48: February 28, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
