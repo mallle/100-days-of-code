@@ -1,5 +1,20 @@
 # 100 Days Of Code - Log
 
+### Day 50: March 2, 2022
+
+**Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
+
+**Learned**:
+1. Using the const keyword for Widgets can improve the app performance because the widget won't be updated if the state changes. 
+2. Widget Lifescycle of a Stateless Widget: Constructor Function --> build()
+3. Widget Lifescycle of a Statefull Widget: Constructor Function --> initState() --> build() --> setState() --> didUpdateWidget() --> build() --> dispose()
+4. App Lifecycle: Inactive: Apps is inactive and there is no user input received. Paused: App is not visible to the user, but running in the background. Resumed: App is again visible and responding to user input. Suspending: App is about to be suspended/exited.
+5. Context: Every widget has a context. The context holds meta-information about the widget and its location in the widget tree.
+
+
+**Links**:
+[Learn Flutter and Dart](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/)
+
 ### Day 49: March 1, 2022
 
 **Today's Progress**: I moved on with the course: "Flutter & Dart - The Complete Guide [2022 Edition]" by Maximilian Schwarzmüller on Udemy.
